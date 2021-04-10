@@ -1,11 +1,12 @@
-
 .header {
     grid-area: h;
-    background-color: darkgreen;
+    background-color: #7ccdc1;
 }
 
 .loginBlock {
     float: right;
+    color: white;
+    cursor: pointer;
 }
 
 .loginBlock a {

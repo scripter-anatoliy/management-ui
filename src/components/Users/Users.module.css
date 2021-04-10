@@ -1,0 +1,57 @@
+.wrapper {
+    padding: 10px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.users {
+    display: block;
+    width: 100%;
+    float: left;
+    transition: width .2s;
+}
+
+@media only screen and (min-width: 450px) {
+    .users {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .users {
+        width: 33.333%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .users {
+        width: 25%;
+    }
+}
+
+.usersCards {
+    padding: 5px;
+    display: block;
+    border: 1px solid #b5e9a7;
+    border-radius: 3px;
+    position: relative;
+    background: #fff;
+    margin: 0 20px 20px 0;
+    text-decoration: none;
+    color: #474747;
+    z-index: 0;
+    line-height: 170%;
+}
+
+
+.head {
+    font-weight: bold;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+.activeLink {
+    color: blue;
+    cursor: pointer;
+    margin: 0 20px 0 5px;
+}

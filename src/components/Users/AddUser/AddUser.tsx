@@ -1,16 +1,18 @@
 import React from "react";
 import {useDispatch} from "react-redux";
-import {addUsers} from "../../redux/users-reducer";
+import {addUsers} from "../../../redux/users-reducer";
 import {Button, Modal} from "@material-ui/core";
 import m from './AddUser.module.css';
 import {useFormik,} from "formik";
 import TextField from "@material-ui/core/TextField";
 
 function AddUser(props: { open: boolean, setModal: (open: boolean) => void }) {
+
     const dispatch = useDispatch()
 
     const onClose = () => {
         props.setModal(false)
+        formik.resetForm()
 
     }
     const fields = [
@@ -64,7 +66,7 @@ function AddUser(props: { open: boolean, setModal: (open: boolean) => void }) {
         <div className={m.modalContainer}>
             <form onSubmit={formik.handleSubmit}>
                 {fields.map(field => <TextField className={m.input}
-                                            placeholder={field.placeholder} {...formik.getFieldProps(field.field)}/>)}
+                                                placeholder={field.placeholder} {...formik.getFieldProps(field.field)}/>)}
                 <Button variant="contained" color="primary" type="submit">Add</Button>
                 <Button style={{float: "right"}} variant="contained"
                         color="secondary" onClick={onClose}>Close</Button>

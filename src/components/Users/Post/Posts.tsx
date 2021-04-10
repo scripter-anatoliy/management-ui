@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
-import {PostsType, setPosts} from "../../redux/users-reducer";
+import {PostsType, setPosts} from "../../../redux/users-reducer";
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../redux/store";
+import {RootState} from "../../../redux/store";
 import p from './Posts.module.css';
 import {useParams, withRouter} from "react-router-dom";
 

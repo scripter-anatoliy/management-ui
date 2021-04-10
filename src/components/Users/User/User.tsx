@@ -1,79 +1,23 @@
 import React, {useState} from "react";
-import {editUsers, UserType} from "../../redux/users-reducer";
+import {editUsers, UserType} from "../../../redux/users-reducer";
 import {Button} from "@material-ui/core";
 import {useDispatch} from "react-redux";
 import {useFormik} from "formik";
 import {NavLink} from "react-router-dom";
-import u from './Users.module.css';
+import u from '../Users.module.css';
 import EditSharpIcon from '@material-ui/icons/EditSharp';
 import Modal from "@material-ui/core/Modal";
-import m from './AddUser.module.css';
+import m from '../AddUser/AddUser.module.css';
 import TextField from "@material-ui/core/TextField";
 
 type PropsType = {
     user: UserType
 }
 
-export type EditFieldParams = {
-    value: string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-};
-
-// function EditField(props: EditFieldParams) {
-//
-//
-//     const [editMode, setEditMode] = useState(false)
-//
-//     const deactivateEditMode = () => {
-//         setEditMode(false)
-//     }
-//     const activeEditMode = () => {
-//         setEditMode(true)
-//     }
-//     return <span>
-//         {editMode
-//             ? <input type="text" value={props.value} onChange={props.onChange} onBlur={deactivateEditMode}/>
-//             : <span onDoubleClick={activeEditMode}> {props.value} </span>
-//         }
-//     </span>;
-// }
-//
-// const useInputState = (initialState: string): [string, (e: React.ChangeEvent<HTMLInputElement>) => void] => {
-//     const [state, setState] = useState(initialState)
-//     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//         setState(e.currentTarget.value)
-//     }
-//     return [state, onChange]
-// }
-
 
 export let User = (props: PropsType) => {
 
-    //
-    // const [username, setUserName] = useState(props.user.username)
-    // const [name, setName] = useInputState(props.user.name)
-    // const [email, setEmail] = useInputState(props.user.email)
-    // const [street, setStreet] = useInputState(props.user.address.street)
-    // const [suite, setSuite] = useInputState(props.user.address.suite)
-    // const [city, setCity] = useInputState(props.user.address.city)
-    // const [zipcode, setZipcode] = useInputState(props.user.address.zipcode)
-    // const [lat, setLat] = useInputState(props.user.address.geo.lat)
-    // const [lng, setLng] = useInputState(props.user.address.geo.lng)
-    // const [phone, setPhone] = useInputState(props.user.phone)
-    // const [website, setWebsite] = useInputState(props.user.website)
-    // const [companyName, setCompanyName] = useInputState(props.user.company.name)
-    // const [catchPhrase, setCatchPhrase] = useInputState(props.user.company.catchPhrase)
-    // const [bs, setBs] = useInputState(props.user.company.bs)
-
-
     const [isModalOpen, setIsModalOpen] = useState(false)
-
-
-    // const changeNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setUserName(e.currentTarget.value)
-    //
-    // }
-
 
     const dispatch = useDispatch()
 
@@ -129,7 +73,6 @@ export let User = (props: PropsType) => {
             formik.resetForm()
         },
     })
-
 
     return (
         <div>
